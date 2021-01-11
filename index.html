@@ -1,32 +1,26 @@
 <html>
 <head></head>
 <body>
-	<!-- The core Firebase JS SDK is always required and must be listed first -->
-	<script src="https://www.gstatic.com/firebasejs/8.2.2/firebase-app.js"></script>
-
-	<!-- TODO: Add SDKs for Firebase products that you want to use
-	     https://firebase.google.com/docs/web/setup#available-libraries -->
-	<script src="https://www.gstatic.com/firebasejs/8.2.2/firebase-analytics.js"></script>
-
+ 	<!-- Google Analytics -->
 	<script>
-	  // Your web app's Firebase configuration
-	  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
-	  var firebaseConfig = {
-	    apiKey: "AIzaSyDcyQAq8Yr2gv6DE_N73M_a7OFIeVir3-M",
-	    authDomain: "hoboism-f97c4.firebaseapp.com",
-	    projectId: "hoboism-f97c4",
-	    storageBucket: "hoboism-f97c4.appspot.com",
-	    messagingSenderId: "42356234179",
-	    appId: "1:42356234179:web:7b2b6df7d0c5be95ee4f76",
-	    measurementId: "G-0ZQ5TBV0JY"
-	  };
-	  // Initialize Firebase
-	  firebase.initializeApp(firebaseConfig);
-	  firebase.analytics();
-	</script>
-	
-	<script type="text/javascript">
-		document.location.href = 'https://apps.apple.com/app/id1521920568';
-	</script>
+	setTimeout(redirect, 2000);
+	    var redirected = false;
+	    function redirect() {
+		if (!redirected) {
+		    redirected = true;
+		    location.href = 'https://apps.apple.com/app/id1521920568';
+		}
+	    }
+	    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+	    ga('create', 'UA-55194957-1', 'auto');
+	    ga('send', 'pageview', 'Open hobo.win', 'redirect', {
+		hitCallback: redirect
+	    });
+   	</script>
+	<!-- End Google Analytics -->
 </body>
 </html>
