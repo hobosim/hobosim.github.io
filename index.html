@@ -4,14 +4,14 @@
 	<script>
 	setTimeout(redirect, 2000);
 	    var redirected = false;
+		var token = document.location.hash.replace("#", "");
 	    function redirect() {
 			if (!redirected) {
 				redirected = true;
-				var token = window.location.hash.replace("#", "");
 				if (token == 'getStoredToken') {
-					location.href = `hobo://token/${window.localStorage.getItem('token')}`;
+					location.href = `hobo://token/${localStorage.getItem('token')}`;
 				} else {
-					window.localStorage.setItem('token', token);
+					localStorage.setItem('token', token);
 					location.href = `https://apps.apple.com/app/apple-store/id1521920568?pt=6591802&ct=${token}&mt=8`;
 				}
 			}
@@ -22,7 +22,7 @@
 	    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
 
 	    ga('create', 'UA-186984074-1', 'auto');
-	    ga('send', 'pageview', `/${window.location.hash.replace("#", "")}`, 'redirect', {
+	    ga('send', 'pageview', `/${token}`, 'redirect', {
 			hitCallback: redirect
 	    });
    	</script>
