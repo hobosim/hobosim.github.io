@@ -1,0 +1,17 @@
+{
+  "applinks": {
+      "details": [
+           {
+             "appIDs": [ "ZGR22SPY5B.dt.Rvanina"],
+             "components": [
+               {
+                  "/": "/token/*"
+               }
+             ]
+           }
+       ]
+   },
+   "webcredentials": {
+      "apps": [ "ZGR22SPY5B.dt.Rvanina" ]
+   }
+}
