@@ -1,15 +1,21 @@
 <html>
 <head></head>
 <body>
- 	<!-- Google Analytics -->
 	<script>
 	setTimeout(redirect, 2000);
 	    var redirected = false;
 	    function redirect() {
-		if (!redirected) {
-		    redirected = true;
-		    location.href = 'https://apps.apple.com/app/id1521920568';
-		}
+			if (!redirected) {
+				redirected = true;
+				var token = window.location.pathname.replace("?", "").replace("/", "");
+				if (token == 'getStoredToken') {
+					console.log(window.localStorage.getItem('token'));
+					location.href = `hobo://token/${window.localStorage.getItem('token')}`;
+				} else {
+					window.localStorage.setItem('token', token);
+					location.href = `https://apps.apple.com/app/apple-store/id1521920568?pt=6591802&ct=${token}&mt=8`;
+				}
+			}
 	    }
 	    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
 	    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -17,10 +23,9 @@
 	    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
 
 	    ga('create', 'UA-186984074-1', 'auto');
-	    ga('send', 'pageview', 'Open hobo.win', 'redirect', {
-		hitCallback: redirect
+	    ga('send', 'pageview', window.location.pathname, 'redirect', {
+			hitCallback: redirect
 	    });
    	</script>
-	<!-- End Google Analytics -->
 </body>
 </html>
