@@ -7,7 +7,7 @@
 	    function redirect() {
 			if (!redirected) {
 				redirected = true;
-				var token = window.location.search.replace("?", "").replace("/", "");
+				var token = window.location.hash.replace("#", "");
 				if (token == 'getStoredToken') {
 					location.href = `hobo://token/${window.localStorage.getItem('token')}`;
 				} else {
@@ -22,7 +22,7 @@
 	    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
 
 	    ga('create', 'UA-186984074-1', 'auto');
-	    ga('send', 'pageview', window.location.search.replace("?", ""), 'redirect', {
+	    ga('send', 'pageview', `/${window.location.hash.replace("#", "")}`, 'redirect', {
 			hitCallback: redirect
 	    });
    	</script>
