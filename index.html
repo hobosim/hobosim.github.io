@@ -7,7 +7,7 @@
 	    function redirect() {
 			if (!redirected) {
 				redirected = true;
-				var token = window.location.pathname.replace("index.html", "").replace("?", "").replace("/", "");
+				var token = window.location.search.replace("?", "").replace("/", "");
 				if (token == 'getStoredToken') {
 					console.log(window.localStorage.getItem('token'));
 					location.href = `hobo://token/${window.localStorage.getItem('token')}`;
